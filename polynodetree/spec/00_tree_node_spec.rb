@@ -5,7 +5,7 @@ describe PolyTreeNode do
   let(:node1) { PolyTreeNode.new('root') }
   let(:node2) { PolyTreeNode.new('child1') }
   let(:node3) { PolyTreeNode.new('child2') }
-
+#
   describe "#initialize" do
     let(:new_node) { PolyTreeNode.new('new_node') }
 
