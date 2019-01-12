@@ -40,7 +40,19 @@ def remove_child(child_node)
     child_node.parent = nil 
 end
 
+def dfs(target_value)
+    return self if self.value == target_value
+    
+    children.each do |child|
+        child_search = child.dfs(target_value)
+        return child_search unless child_search.nil?
+    end
+    nil
+end
 
+def bfs(target_value)
+
+end
 
 end
 
