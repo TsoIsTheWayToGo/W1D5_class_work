@@ -1,3 +1,5 @@
+require_relative "queue"
+
 class PolyTreeNode
 
 def initialize(value)
@@ -51,7 +53,17 @@ def dfs(target_value)
 end
 
 def bfs(target_value)
+    q = MyQueue.new
+    q.enqueue(self)
 
+    until q.empty?
+        curr_node = q.dequeue
+        return curr_node if curr_node.value == target_value
+        curr_node.children.each do |child|
+            q.enqueue(child)
+        end
+    end
+    nil
 end
 
 end
